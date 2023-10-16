@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="prodcut_template_inherit_product_template" model="ir.ui.view">
+            <field name="name">product.template.view.form.inherit</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_only_form_view"/>
+            <field name="arch" type="xml">
+                <!-- Adding the activate_custom_url field to the product view -->
+                <xpath expr="//field[@name='sale_ok']" position="before">
+                    <span class="d-inline-block">
+                        <field name="activate_custom_url" />
+                        <label for="activate_custom_url"/>
+                    </span>    
+                </xpath>
+                <!-- Showing the custom_url field based on the value of activate_custom_url -->
+                <xpath expr="//field[@name='detailed_type']" position="before">
+                    <field name="custom_url" attrs="{'invisible': [('activate_custom_url', '=', False)]}"/>
+                </xpath>    
+            </field>
+        </record>
+    </data>
+</odoo>
+
