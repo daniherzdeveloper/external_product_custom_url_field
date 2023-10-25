@@ -3,7 +3,7 @@
     'version': '1.0',
     'summary': 'Add URL content field to product',
     'author': 'daniherzdeveloper',
-    'depends': ['website_sale', ],
+    'depends': ['base', 'website_sale'],
     'data': [
         'views/product_view.xml',
     ],
