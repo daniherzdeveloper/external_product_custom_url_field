@@ -15,7 +15,7 @@
                 </xpath>
                 <!-- Showing the custom_url field based on the value of activate_custom_url -->
                 <xpath expr="//field[@name='detailed_type']" position="before">
-                    <field name="custom_url" attrs="{'invisible': [('activate_custom_url', '=', False)]}"/>
+                    <field name="custom_url" invisible="not activate_custom_url"/>
                 </xpath>    
             </field>
         </record>
